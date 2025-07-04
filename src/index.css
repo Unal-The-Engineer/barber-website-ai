@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Animation Initial States - Prevents Flash Effect */
+.animate-fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.animate-slide-up {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.animate-slide-in-left {
+  opacity: 0;
+  transform: translateX(-60px);
+}
+
+.animate-slide-in-right {
+  opacity: 0;
+  transform: translateX(60px);
+}
+
+/* Animation will override these initial states */
+.animate-fade-in {
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.9s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.9s ease-out forwards;
+}
+
+/* Keep other animations as they are (no initial hidden state needed) */
+.animate-bounce-gentle {
+  animation: bounceGentle 3s ease-in-out infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulseSoft 4s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Dynamic Background Animations */
+.dynamic-background {
+  background: linear-gradient(-45deg, #f2f0ec, #e8e4dc, #e2e0dc, #ddd6c8, #a59d90, #918776, #f2f0ec) !important;
+  background-size: 600% 600% !important;
+  animation: gradientFlow 10s ease-in-out infinite !important;
+  position: relative;
+}
+
+.wave-background {
+  background: linear-gradient(45deg, #bfb198, #a59d90, #8d7d66, #7a7062);
+  background-size: 300% 300%;
+  animation: waveMotion 20s ease-in-out infinite;
+}
+
+/* Keyframe animations */
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes waveMotion {
+  0% {
+    background-position: 0% 0%;
+    transform: scale(1);
+  }
+  25% {
+    background-position: 100% 100%;
+    transform: scale(1.02);
+  }
+  50% {
+    background-position: 100% 0%;
+    transform: scale(1);
+  }
+  75% {
+    background-position: 0% 100%;
+    transform: scale(1.01);
+  }
+  100% {
+    background-position: 0% 0%;
+    transform: scale(1);
+  }
+}
+
+/* Force English locale for date inputs */
+input[type="date"] {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Force English date format */
+input[type="date"]::-webkit-datetime-edit {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+input[type="date"]::-webkit-datetime-edit-fields-wrapper {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+input[type="date"]::-webkit-datetime-edit-text {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+input[type="date"]::-webkit-datetime-edit-month-field {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+input[type="date"]::-webkit-datetime-edit-day-field {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+input[type="date"]::-webkit-datetime-edit-year-field {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Force English calendar */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
